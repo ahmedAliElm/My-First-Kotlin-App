@@ -1,12 +1,11 @@
 package com.example.firstapp
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,8 +16,19 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+
         val editText: EditText = findViewById(R.id.editText1)
-        val textInput = editText.text.toString()
+
+
+        val btn: Button = findViewById(R.id.button1)
+
+        btn.setOnClickListener {
+
+            val textInput = editText.text.toString()
+
+            Toast.makeText(this@MainActivity,
+                textInput, Toast.LENGTH_LONG).show()
+        }
     }
 }
 
