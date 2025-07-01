@@ -1,6 +1,7 @@
 package com.example.firstapp
 
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,8 +17,33 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        val textView: TextView = findViewById(R.id.textView)
-        textView.setText("Ahmed Ali")
+        val editText: EditText = findViewById(R.id.editText1)
+        val textInput = editText.text.toString()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
