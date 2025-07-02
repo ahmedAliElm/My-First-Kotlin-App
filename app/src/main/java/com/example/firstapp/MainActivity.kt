@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    var counter = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -18,32 +21,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-//        val editText: EditText = findViewById(R.id.editText1)
-//
-//
-//        val btn: Button = findViewById(R.id.button1)
-//
-//        btn.setOnClickListener {
-//
-//            val textInput = editText.text.toString()
-//
-//            Toast.makeText(this@MainActivity,
-//                textInput, Toast.LENGTH_LONG).show()
-//        }
-//
-//
-//        val img: ImageView = findViewById(R.id.img)
-
-
-        val editText: EditText = findViewById(R.id.editText1)
+        val resultText: TextView = findViewById(R.id.result)
         val btn: Button = findViewById(R.id.button1)
+        val editText: EditText = findViewById(R.id.et1)
 
         btn.setOnClickListener() {
-            var enteredText = editText.text
 
-            Toast.makeText(this, "Hello $enteredText.",
-                Toast.LENGTH_LONG).show()
+            var kilos = editText.text.toString().toFloat()
+
+            resultText.setText("${convertToPounds(kilos)} pounds.")
         }
+    }
+
+    fun increaseCounter(): Int {
+        return ++counter
+    }
+
+    fun convertToPounds(kilos: Float): Float {
+        return kilos * 2.2f
     }
 }
 
