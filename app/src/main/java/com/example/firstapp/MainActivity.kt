@@ -18,22 +18,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+//        val editText: EditText = findViewById(R.id.editText1)
+//
+//
+//        val btn: Button = findViewById(R.id.button1)
+//
+//        btn.setOnClickListener {
+//
+//            val textInput = editText.text.toString()
+//
+//            Toast.makeText(this@MainActivity,
+//                textInput, Toast.LENGTH_LONG).show()
+//        }
+//
+//
+//        val img: ImageView = findViewById(R.id.img)
+
+
         val editText: EditText = findViewById(R.id.editText1)
-
-
         val btn: Button = findViewById(R.id.button1)
 
-        btn.setOnClickListener {
+        btn.setOnClickListener() {
+            var enteredText = editText.text
 
-            val textInput = editText.text.toString()
-
-            Toast.makeText(this@MainActivity,
-                textInput, Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Hello $enteredText.",
+                Toast.LENGTH_LONG).show()
         }
-
-
-        val img: ImageView = findViewById(R.id.img)
-
     }
 }
 
